@@ -12,7 +12,7 @@ class Note extends StatefulWidget {
 class _NoteState extends State<Note> {
 
 
-     CardNote _cardNote = CardNote();
+     final CardNote _cardNote = CardNote();
  //final _controller = TextEditingController();
   //final _title = TextEditingController();
 
@@ -29,6 +29,7 @@ class _NoteState extends State<Note> {
 _delete(int i){
   setState(() {
     _cardNote.allNotes.remove(_cardNote.allNotes[i]);
+    _cardNote.titleList.remove(_cardNote.titleList[i]);
     _submit();
   });
 }
@@ -41,7 +42,7 @@ _delete(int i){
             backgroundColor: Colors.white,
               appBar: AppBar(
                 elevation: 0,
-                  iconTheme: IconThemeData(color: Colors.amber),
+                  iconTheme: const IconThemeData(color: Colors.amber),
                   backgroundColor: Colors.white,
                   actions: [
                   // showDialog<void>(
@@ -51,14 +52,15 @@ _delete(int i){
                   //   return AlertDialog(
                   //       scrollable:true ,);
                     IconButton(
-                      icon: Icon(Icons.color_lens),
+                      icon: const Icon(Icons.color_lens),
                       onPressed: (){
                         showDialog<void>(context: context,
                             builder: (BuildContext context){
                                   return Padding(
                                     padding: const EdgeInsets.all(0.0),
                                     child: AlertDialog(
-                                      title: Text('Note color'),
+                                      backgroundColor: Colors.grey[100],
+                                      title: const Text('Note color'),
                                       content:  Padding(
                                         padding: const EdgeInsets.fromLTRB(0,0,0,15),
                                         child: SizedBox(
@@ -70,28 +72,28 @@ _delete(int i){
                                                   Expanded(
                                                     flex: 1,
                                                     child: IconButton(onPressed: (){},
-                                                        icon: Icon(Icons.circle,
+                                                        icon: const Icon(Icons.circle,
                                                           size: 50,
                                                         color: Colors.white,)),
                                                   ),
                                                   Expanded(
                                                     flex: 1,
                                                     child: IconButton(onPressed: (){},
-                                                        icon: Icon(Icons.circle,
+                                                        icon: const Icon(Icons.circle,
                                                           size: 50,
                                                           color: Colors.redAccent,)),
                                                   ),
                                                    Expanded(
                                                      flex: 1,
                                                     child: IconButton(onPressed: (){},
-                                                        icon: Icon(Icons.circle,
+                                                        icon: const Icon(Icons.circle,
                                                           size: 50,
                                                           color: Colors.yellowAccent,)),
                                                   ),
                                                   Expanded(
                                                     flex: 1,
                                                     child: IconButton(onPressed: (){},
-                                                        icon: Icon(Icons.circle,
+                                                        icon: const Icon(Icons.circle,
                                                           size: 50,
                                                           color: Colors.amberAccent,)),
                                                   ),
@@ -108,7 +110,7 @@ _delete(int i){
                                                     Expanded(
                                                       flex: 1,
                                                       child: IconButton(onPressed: (){},
-                                                          icon: Icon(Icons.circle,
+                                                          icon: const Icon(Icons.circle,
                                                             size: 50,
                                                             color: Colors.blueAccent,)),
                                                     ),
@@ -129,7 +131,7 @@ _delete(int i){
                                                     Expanded(
                                                       flex: 1,
                                                       child: IconButton(onPressed: (){},
-                                                          icon: Icon(Icons.circle,
+                                                          icon: const Icon(Icons.circle,
                                                             size: 50,
                                                             color: Colors.lightGreenAccent,)),
                                                     ),
@@ -145,14 +147,14 @@ _delete(int i){
                                                   Expanded(
                                                     flex: 1,
                                                     child: IconButton(onPressed: (){},
-                                                        icon: Icon(Icons.circle,
+                                                        icon: const Icon(Icons.circle,
                                                           size: 50,
                                                           color: Colors.purpleAccent,)),
                                                   ),
                                                   Expanded(
                                                     flex: 1,
                                                     child: IconButton(onPressed: (){},
-                                                        icon: Icon(Icons.circle,
+                                                        icon: const Icon(Icons.circle,
                                                           size: 50,
                                                           color: Colors.pinkAccent,)),
                                                   ),
@@ -193,12 +195,12 @@ _delete(int i){
                     //_noteAfterEdit = _controller.text;
                      s = _cardNote.controller.text;
                         _submit();
-                      }, icon: Icon(Icons.check),),
+                      }, icon: const Icon(Icons.check),),
                     PopupMenuButton(
-                        icon: Icon(Icons.more_vert),
+                        icon: const Icon(Icons.more_vert),
                         itemBuilder: (context) => [
                           PopupMenuItem(
-                            child: Text('Delete',
+                            child: const Text('Delete',
                             ),
                             onTap: (){
                               _delete(i);
@@ -216,7 +218,7 @@ _delete(int i){
                     //keyboardType: TextInputType.text,
                     textInputAction: TextInputAction.newline,
                     controller: _cardNote.title,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Title',
                     ),
                   ),
@@ -226,7 +228,7 @@ _delete(int i){
                     //keyboardType: TextInputType.text,
                     textInputAction: TextInputAction.newline,
                     controller: _cardNote.controller,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Enter task description',
                     ),
                   ),
@@ -236,18 +238,17 @@ _delete(int i){
         }
     ))
         .then((valueFromTextField){
-      //return buidlist(valueFromTextField);
+      //return buildList(valueFromTextField);
      // print(valueFromTextField);
-      String notevalue = valueFromTextField;
+      String noteValue = valueFromTextField;
       setState(() {
-        _cardNote.allNotes[i] = notevalue;
+        _cardNote.allNotes[i] = noteValue;
         _cardNote.titleList[i] = _cardNote.title.text;
       });
     //  print(_allNotes[i]);
-      print(i);
+      //print(i);
     });
   }
-  @override
   void _navigate(){
     Navigator.of(context).push(MaterialPageRoute(
         builder: (BuildContext context)
@@ -255,7 +256,7 @@ _delete(int i){
       return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
-            iconTheme: IconThemeData(color: Colors.amber),
+            iconTheme: const IconThemeData(color: Colors.amber),
           elevation: 0,
           backgroundColor: Colors.white,
           actions: [
@@ -264,7 +265,7 @@ _delete(int i){
                 _submit();
                // _submit();
                 //Notes();
-              }, icon: Icon(Icons.check),)
+              }, icon: const Icon(Icons.check),)
           ]
         ),
         body: Column(
@@ -276,7 +277,7 @@ _delete(int i){
               maxLines: null,
               //keyboardType: TextInputType.text,
               textInputAction: TextInputAction.newline,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: 'Title'
               ),
             ),
@@ -287,7 +288,7 @@ _delete(int i){
               maxLines: null,
               //keyboardType: TextInputType.text,
               textInputAction: TextInputAction.newline,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Note'
                     ),
                   ),
@@ -303,24 +304,22 @@ _delete(int i){
           });
     });
   }
-  @override
   Widget myWidget() {
    return  ListView.builder(
-      itemBuilder: (contex, i){
-        if( _cardNote.allNotes.length == 0)
+      itemBuilder: (context, i){
+        if( _cardNote.allNotes.isEmpty)
         {
-          return Text('');
+          return const Text('');
         }
         else if(i <  _cardNote.allNotes.length) {
-          return CardNotes( _cardNote.allNotes[i] ,i);
+          return cardNotes( _cardNote.allNotes[i] ,i);
         }
-        return Text('');
+        return const Text('');
       },
     );
     }
 
-  @override
-  Widget CardNotes(String s, int i){
+  Widget cardNotes(String s, int i){
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
@@ -338,7 +337,7 @@ _delete(int i){
             Text(_cardNote.titleList[i],
               overflow: TextOverflow.fade,
               maxLines: 4,
-              style: TextStyle(
+              style: const TextStyle(
               fontWeight: FontWeight.bold
             ),
             ),
@@ -359,13 +358,14 @@ _delete(int i){
     return   Scaffold(
       appBar: AppBar(
         actions: [
-          Expanded( flex : 2,child: SizedBox()),
+          const Expanded( flex : 2,child: SizedBox()),
           Expanded( flex:1,
             child: TextButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Task()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Task()));
              // _submit();
+             // MyApp();
             },
-                child: Text('Tasks',
+                child: const Text('Tasks',
                   overflow: TextOverflow.fade,
                   style: TextStyle(color: Colors.black,
                       fontWeight: FontWeight.bold),)),
@@ -373,11 +373,11 @@ _delete(int i){
           Expanded( flex:1,
             child: TextButton(onPressed: (){
               //_navigate();
-            }, child: Text('Notes', overflow: TextOverflow.fade,style:
+            }, child: const Text('Notes', overflow: TextOverflow.fade,style:
             TextStyle(color: Colors.amber,
                 fontWeight: FontWeight.bold),)),
           ),
-          Expanded(flex :2,child: SizedBox())
+          const Expanded(flex :2,child: SizedBox())
         ],
       ),
       floatingActionButton: FloatingActionButton(
