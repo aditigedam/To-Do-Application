@@ -12,8 +12,6 @@ void main() {
   ));
 }
 
-// hI ALL ok 11111111111111111111111111111111111111111111111111111111
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
