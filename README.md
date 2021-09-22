@@ -1,16 +1,8 @@
-# todo_app
+# To-Do Application
 
-A new Flutter project.
+ A Two-Screen android and ios application enable to note down tasks 
+ to be done and ideas to execute. Having feature like delete them after they are done.
+change color of each task and note, from more than 10 colors. 
 
-## Getting Started
+## The application will look like this:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab:  your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
