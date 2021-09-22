@@ -4,10 +4,9 @@
  to be done and ideas to execute. Having feature like delete them after they are done.
 change color of each task and note, from more than 10 colors. 
 
-## The application will look like this:
-## Screenshots
+## The application looks like this:
 
-![App Screenshot](![th](https://user-images.githubusercontent.com/69805547/134340671-804f6085-6e4f-430f-a743-d11b0489c577.mp4)
-![App Screenshot](![th](https://user-images.githubusercontent.com/69805547/134338495-c6e2d8a2-37b8-4187-a749-012258c58b61.mp4)
-![App Screenshot](![th](https://user-images.githubusercontent.com/69805547/134339275-ba077632-0440-47a9-99ce-480c0dc80ea0.mp4)
-![App Screenshot](![th](https://user-images.githubusercontent.com/69805547/134339275-ba077632-0440-47a9-99ce-480c0dc80ea0.mp4)
+![Demo](https://user-images.githubusercontent.com/69805547/134400191-187f7710-8765-469e-b7cd-43ad945c2927.gif) 
+![Demo](https://user-images.githubusercontent.com/69805547/134400200-8821d89f-5144-470d-9715-0897d7ed3081.gif)
+![Demo](https://user-images.githubusercontent.com/69805547/134400222-52c42cd9-1421-4ec3-82b3-c45bf7693682.gif)
+![Demo](https://user-images.githubusercontent.com/69805547/134400421-fd7f2976-c5d2-4457-bf1c-28d2c3ef44e8.gif)
