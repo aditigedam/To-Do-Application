@@ -5,7 +5,8 @@
 change color of each task and note, from more than 10 colors. 
 
 ## The application will look like this:
+## Screenshots
 
 ![App Screenshot](![th](https://user-images.githubusercontent.com/69805547/134339837-64431eff-9fdf-489a-9134-ad3d311ed190.jpg))
-
+  
   
